@@ -9,7 +9,7 @@ loginButton.addEventListener("click", (e) => {
 
     if (username === "project" && password === "robot") {
         alert("You have successfully logged in.");
-        location.replace("https://605b51bf36fdd.htmlsave.net/")
+        location.replace("https://vaishu299.github.io/")
     } else {
         loginErrorMsg.style.opacity = 1;
     }
