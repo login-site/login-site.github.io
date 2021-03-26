@@ -8,7 +8,7 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "project" && password === "robot") {
-        alert("You have successfully logged in.");
+       
         location.replace("https://vaishu299.github.io/")
     } else {
         loginErrorMsg.style.opacity = 1;
