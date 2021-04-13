@@ -9,12 +9,12 @@ body {
   display: grid;
   justify-items: center;
   align-items: center;
-  background-color: #3a3a3a;
+  background-color: black;
 }
 
 #main-holder {
-  width: 50%;
-  height: 70%;
+  width: 40%;
+  height:90%;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -32,16 +32,17 @@ body {
 }
 
 #login-error-msg {
-  width: 23%;
+  width: 30%;
+  height: 35%;
   text-align: center;
   margin: 0;
   padding: 5px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
-  color: #8a0000;
-  border: 1px solid #8a0000;
-  background-color: #e58f8f;
-  opacity: 0;
+  color: red;
+  border: 1px solid red;
+  background-color: cyan;
+  opacity:0;
 }
 
 #error-msg-second-line {
@@ -56,12 +57,20 @@ body {
 }
 
 .login-form-field::placeholder {
-  color: #3a3a3a;
+  color: black;
+  width: 100%;
+  height: 100%;
 }
 
 .login-form-field {
+  width: 100%;
+  height: 100%;
+  
   border: none;
-  border-bottom: 1px solid #3a3a3a;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   margin-bottom: 10px;
   border-radius: 3px;
   outline: none;
@@ -70,12 +79,13 @@ body {
 
 #login-form-submit {
   width: 100%;
+  height: 100%;
   padding: 7px;
   border: none;
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  background-color: #3a3a3a;
+  background-color: black;
   cursor: pointer;
   outline: none;
 }
