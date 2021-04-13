@@ -1,4 +1,4 @@
-const loginForm = document.getElementById("login-form");
+dconst loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 
@@ -9,7 +9,7 @@ loginButton.addEventListener("click", (e) => {
 
     if (username === "project" && password === "robot") {
         
-        location.replace("https://vaishu299.github.io/")
+        location.replace("https://video-display.github.io/")
     } else {
         loginErrorMsg.style.opacity = 1;
     }
