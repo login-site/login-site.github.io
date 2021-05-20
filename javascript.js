@@ -9,7 +9,7 @@ loginButton.addEventListener("click", (e) => {
 
     if (username === "project" && password === "robot") {
         
-        location.replace("https://login-site.github.io/robot.html")
+        location.replace("https://virtual-telepresence-robot.github.io/robot.html")
     } else {
         loginErrorMsg.style.opacity = 1;
     }
