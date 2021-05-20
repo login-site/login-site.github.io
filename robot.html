@@ -1,0 +1,178 @@
+
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<link rel="stylesheet" href='style.css'/>
+
+<style>
+
+</style>
+
+<body>
+
+<div style="text-align:center">
+
+<p style="font-size:40px;font-weight: bold;color: white">RPi WEB ROBOT CONTROL</p>
+
+<div style="width:100%;"> 
+
+
+<! -- 1st division for VIDEO DISPLAY -->
+
+<div class="video" style="float:left; width:40%;">
+
+<iframe src="http://10.0.1.31:9000/javascript_simple.html" frameborder="0" align="middle" width="600" height="615" align="middle" scrolling="no"></iframe>
+
+</div>
+
+
+<! -- 2nd division for ROBOT CONTROL -->
+
+<div class="robot" style="float:left; width:30%; ">
+
+<span style="display:inline-block;padding:10px;border:1px solid white; font-size: 140%;font-weight: bold;color: white">
+	
+	
+	<! -- DIRECTION -->
+
+	<h4>Robot direction control</h4>
+	
+	<a href="/up_side"><button class="button" style="height: 90px; width: 90px"><img style="height: 70px; width: 70px"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSgtNT9hsKE-J_HVhuCiLZqscQ_LEfGnYaOA&usqp=CAU"></button></a>
+	
+	<br><br>
+	
+	<a href="/left_side"><button class="button" style="height: 90px; width: 90px"><img style="height: 70px; width: 70px"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgd8rmEi9t0Kj43CJMf0rNw_F9qbKvIjLfaA&usqp=CAU"></button></a>
+	
+	<img hspace="15" style="padding-right: 1px">
+	
+	<a href="/stop"><button class="button" style="height: 90px; width: 90px"><img style="height: 70px; width: 70px"src="https://cdn11.bigcommerce.com/s-5d127/images/stencil/1280x1280/products/73/268/FS-STOP_Basic__55624.1308461267.jpg?c=2"></button></a>
+	
+	<img hspace="15" style="padding-right: 1px">
+	
+	<a href="/right_side"><button class="button" style="height: 90px; width: 90px"><img style="height: 70px; width: 70px"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYOIFxY4xLfh4LpIgUGyJh3QhhtPVQNYgnfjCbnLMnoUH0y-GVT5dBjYK6Jyvvcfrmd4&usqp=CAU"></button></a>
+	
+	<br><br>
+	
+	<a href="/down_side"><button class="button" style="height: 90px; width: 90px"><img style="height: 70px; width: 70px"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeD9CKS0kQuangpDOtCt_RXFsDU1fAMUacKA&usqp=CAU"> </button></a>
+	
+	<br><br>
+
+
+	<! -- SPEED -->
+
+	<h4>Robot speed control</h4>
+	
+	<img hspace="0" style="padding-left: 10px">
+	
+	<button class="button" style="height: 50px; width: 60px; font-size: 30px" onclick="nospeed()">0</button>
+	
+	<img hspace=10" style="padding-left: 10px">
+	
+	<button class="button"  style="height: 50px; width: 60px; font-size: 30px" onclick="lowspeed()">--</button>
+	
+	<img hspace="10" style="padding-left: 10px">
+	
+	<button class="button" style="height: 50px; width: 60px; font-size: 30px" onclick="regularspeed()">==</button>
+	
+	<img hspace="10" style="padding-left: 10px">
+	
+	<button class="button" style="height: 50px; width: 60px; font-size: 30px" onclick="highspeed()">++</button>
+	
+	<img hspace="0" style="padding-left: 10px">
+	
+	<br><br>
+
+</span>
+
+</div>
+
+
+<! -- 3rd division for led, camera controls --> 
+
+<div class="camera" style="float:right; width:30%; ">
+
+<span style="display:inline-block;padding:3px;border:1px solid white; font-size: 140%;font-weight: bold;color: white">
+        
+	<! -- LED control --> 
+	
+	<h4>LED is {{ led  }}</h4>
+
+	<a href="/led/on"><button class="button" style="height: 70px; width: 70px" ><img style="height: 55px; width: 55px"src="https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3-1200-80.jpg"></button></a>
+	
+	<img style="padding-right: 120px">
+	
+	<a href="/led/off"><button class="button" style="height: 70px; width: 70px"><img style="height: 55px; width: 55px"src="https://i.dailymail.co.uk/i/pix/2014/01/26/article-2546363-1AFB247500000578-934_306x423.jpg"></button></a>
+
+	<br><br><br>
+
+	
+	<! -- CAMERA TILT control --> 
+
+        <h4>Camera Tilt Angle =  [ {{ tiltServoAngle }} ]</h4>
+        
+	<img hspace="1" style="padding-left: 0px">
+	
+	<a href="/tilt/30"><button class="button" style="height: 50px; width: 70px; font-size: 30px">-D</button></a>
+        
+	<img hspace="1" style="padding-left: 4px">
+	
+	<a href="/pan/60"><button class="button" style="height: 50px; width: 70px; font-size: 30px">D</button></a>
+        
+	<img hspace="1" style="padding-left: 4px">
+
+	<a href="/pan/90"><button class="button" style="height: 50px; width: 70px; font-size: 30px">0</button></a>
+        
+	<img hspace="1" style="padding-left: 4px">
+	
+	<a href="/pan/120"><button class="button" style="height: 50px; width: 70px; font-size: 30px">U</button></a>
+        
+	<img hspace="1" style="padding-left: 4px">
+	
+	<a href="/pan/150"><button class="button" style="height: 50px; width: 70px; font-size: 30px">U+</button></a>
+        
+	<img hspace="1" style="padding-left: 20px">
+	
+	<br><br><br>
+
+    
+	<! -- CAMERA PAN control -->
+    
+	<h4>Camera Pan Position = [{{ panServoAngle }}]</h4>
+	
+	<img hspace="1" style="padding-left: 0px">
+        
+	<a href="/pan/30"><button class="button" style="height: 50px; width: 70px; font-size: 30px">+L</button></a>
+
+	<img hspace="1" style="padding-left: 4px">
+
+        <a href="/pan/60"><button class="button" style="height: 50px; width: 70px; font-size: 30px">L</button></a>
+	
+	<img hspace="1" style="padding-left: 4px">
+        
+	<a href="/pan/90"><button class="button" style="height: 50px; width: 70px; font-size: 30px">0</button></a>
+	
+	<img hspace="1" style="padding-left: 4px">
+        
+	<a href="/pan/120"><button class="button" style="height: 50px; width: 70px; font-size: 30px">R</button></a>
+	
+	<img hspace="1" style="padding-left: 4px">
+       
+	<a href="/pan/150"><button class="button" style="height: 50px; width: 70px; font-size: 30px">R+</button></a>
+	
+	<img hspace="1" style="padding-left: 20px">
+        
+	<br><br><br><br>
+
+
+</span>
+
+</div>
+</div>
+
+</body>
+</html>
